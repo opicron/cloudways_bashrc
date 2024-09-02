@@ -1,11 +1,11 @@
 # .bash_aliases
 Useful prompt and functions to make live easier on Cloudways servers
 
-# Prompt
+## Prompt
 - Screen # and title
 - Github branch (dirty *)
 
-# Screen
+## Screen
 - Add `screen -X` vars to avoid messages blocking and appearing
   - This is necesarry to make `screen -Q title` work
 
