@@ -20,8 +20,13 @@ Application information traffix by timeframe
 `/usr/local/sbin/apm -s juseyhuctm traffic -l 2m`
 
 ## Available Commands
-- `bandwidth`   Get application and url network bandwidth
-- `cron`        Report running crons for a specific application
+
+### `bandwidth`
+Get application and url network bandwidth
+
+### `cron`
+Report running crons for a specific application
+
 - `domains`     Get list of application primary domains
 - `help`        Help about any command
 - `info`        Get Cloudways platform server
