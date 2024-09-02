@@ -9,6 +9,9 @@ Useful prompt and functions to make live easier on Cloudways servers. Yes, I kno
 - Add `screen -X` vars to avoid messages blocking and appearing
   - This is necesarry to make `screen -Q title` work
 
+### screenlist
+Returns the current list of screens # and titles
+
 # APM
 Server and application information:
 `/usr/local/sbin/apm`
