@@ -1,5 +1,5 @@
 # .bash_aliases
-Useful prompt and functions to make live easier on Cloudways servers
+Useful prompt and functions to make live easier on Cloudways servers. Yes, I know we shouldnt use `.bash_aliases` for all these additional functionality. However, `.bash_aliases` is included automatic by the default Clouways `.bashrc`. So we do not have to do any editing, just drop this file in your `~` home.
 
 ## Prompt
 - Screen # and title
