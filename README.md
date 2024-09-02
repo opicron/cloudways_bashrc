@@ -9,7 +9,7 @@ Useful prompt and functions to make live easier on Cloudways servers. Yes, I kno
 - Add `screen -X` vars to avoid messages blocking and appearing
   - This is necesarry to make `screen -Q title` work
 
-### screenlist
+### `screenlist`
 Returns the current list of screens # and titles
 
 # APM
@@ -27,14 +27,33 @@ Get application and url network bandwidth
 ### `cron`
 Report running crons for a specific application
 
-- `domains`     Get list of application primary domains
-- `help`        Help about any command
-- `info`        Get Cloudways platform server
-- `mysql`       MySQL related statistics
-- `php`         Php processes related statistics
-- `scan`        Scan server for any suspicious files
-- `traffic`     Web traffic based statistics
-- `upgrade`     Auto upgrade this tool
-- `users`       Get list of app and master user
-- `version`     Prints version information
+### `domains`
+Get list of application primary domains
+
+### `help`
+Help about any command
+
+### `info`
+Get Cloudways platform server
+
+### `mysql`
+MySQL related statistics
+
+### `php`
+Php processes related statistics
+
+### `scan`
+Scan server for any suspicious files
+
+### `traffic`
+Web traffic based statistics
+
+### `upgrade`
+Auto upgrade this tool
+
+### `users`
+Get list of app and master user
+
+### `version`
+Prints version information
 
