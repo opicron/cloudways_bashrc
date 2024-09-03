@@ -106,9 +106,6 @@ check_and_reload_bashrc () {
       echo ".bash_aliases changed. re-sourcing.." >&2
       . ~/.bashrc
     fi
-  else
-    touch ~/.bash_aliases
-    export BASHRC_MTIME=$(date -r ~/.reload_bash +%s)
   fi
 }
 
