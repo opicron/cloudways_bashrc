@@ -113,7 +113,7 @@ PROMPT_COMMAND="check_and_reload_bashrc"
 # aliases
 alias lt='ls --human-readable --size -1 -S --classify'
 alias apm='/usr/local/sbin/apm'
-alias getgitbash='wget --no-cache https://raw.githubusercontent.com/opicron/cloudways_bashrc/main/.bash_aliases -O ~/.bash_aliases'
+alias getgitbash='wget -q --show-progress --no-cache https://raw.githubusercontent.com/opicron/cloudways_bashrc/main/.bash_aliases -O ~/.bash_aliases'
 
 # custom screen help
 if [ "x$TERM" == "xscreen" ];
