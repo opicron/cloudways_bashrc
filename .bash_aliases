@@ -107,7 +107,7 @@ FILE=~/.reload_bash
 if [ -f $FILE ]; then
   export BASHRC_MTIME=$(date -r ~/.reload_bash +%s)
 else
-  touch ~./reload_bash
+  touch ~/.reload_bash
   export BASHRC_MTIME=$(date -r ~/.reload_bash +%s)
 fi
 
