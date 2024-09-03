@@ -92,7 +92,7 @@ function parse_git_branch {
 }
 
 check_and_reload_bashrc () {
-  if [[ -z "${DEPLOY_ENV}" ]]; then
+  if [[ -z "${BASHRC_MTIME}" ]]; then
     if ! [ -f $FILE ]; then
       touch ~/.bash_aliases
     fi
