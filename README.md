@@ -1,6 +1,8 @@
 # .bash_aliases
 Useful prompt and functions to make live easier on Cloudways servers. Yes, I know we shouldnt use `.bash_aliases` for all these additional functionality. However, `.bash_aliases` is included automatic by the default Clouways `.bashrc`. So we do not have to do any editing, just drop this file in your `~` home.
 
+`PROMPT_COMMAND` is used to check the timestamp of `.bash_aliases` on each prompt reload. If its a new timestamp `.bashrc` is re-sourced. This will make sure all screen prompts and `.bash_aliases` are updated when required.
+
 ## Prompt
 - Screen # and title
 - Github branch (dirty *)
@@ -8,6 +10,14 @@ Useful prompt and functions to make live easier on Cloudways servers. Yes, I kno
 ## Screen
 - Add `screen -X` vars to avoid messages blocking and appearing
   - This is necesarry to make `screen -Q title` work
+
+# aliases
+
+### `lt`
+Nice way to show folder content
+
+### `getgitbash`
+Retrieve new `.bash_aliases` from github
 
 ### `screenlist`
 Returns the current list of screens # and titles
