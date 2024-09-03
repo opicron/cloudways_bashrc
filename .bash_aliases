@@ -92,7 +92,6 @@ function parse_git_branch {
 }
 
 # load mtime at bash start-up
-echo "bashrc mtime: $(date -r ~/.bash_aliases +%s)" >&2
 export BASHRC_MTIME=$(date -r ~/.bash_aliases +%s)
 
 # auto reload .bash_aliases
@@ -100,7 +99,7 @@ PROMPT_COMMAND="check_and_reload_bashrc"
 check_and_reload_bashrc () {
   if [ "$(date -r ~/.bash_aliases +%s)" != $BASHRC_MTIME ]; then
     export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
-    echo ".bash_aliases changed. re-sourcing..." >&2
+    echo ".bash_aliases changed. re-sourcing.." >&2
     . ~/.bashrc
   fi
 }
