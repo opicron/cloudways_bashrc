@@ -91,6 +91,7 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
 
+# auto reload .bash_aliases on change
 check_and_reload_bashrc () {
   if [[ -z "${BASHRC_MTIME}" ]]; then
     if ! [ -f $FILE ]; then
@@ -100,7 +101,6 @@ check_and_reload_bashrc () {
   else
     if [ "$(date -r ~/.bash_aliases +%s)" != $BASHRC_MTIME ]; then
       export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
-      # auto reload .bash_aliases
       echo ".bash_aliases changed. re-sourcing.." >&2
       . ~/.bashrc
     fi
