@@ -140,7 +140,7 @@ then
   PS1+="${txtcyn}\W${txtrst} \$ "
 
 else
-  # help screen
+  # help screen on first run
   if [[ -z "${BASHRC_MTIME}" ]]; then
     screen_help
 
