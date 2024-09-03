@@ -126,8 +126,6 @@ then
   #replace exit with screen detach
   alias exit='screen -d'
 
-  screen_help
-
   # screen ps1 prompt
   PS1="\n${debian_chroot:+($debian_chroot)}"
 
@@ -141,6 +139,9 @@ then
   PS1+="${txtcyn}\W${txtrst} \$ "
 
 else
+  # help screen
+  screen_help
+
   #replace screen with attach
   alias screen='screen -R'
 fi
