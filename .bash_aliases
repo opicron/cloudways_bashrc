@@ -104,9 +104,10 @@ check_and_reload_bashrc () {
   fi
 }
 
-# listing
+# aliases
 alias lt='ls --human-readable --size -1 -S --classify'
 alias apm='/usr/local/sbin/apm'
+alias getgitbash='wget https://raw.githubusercontent.com/opicron/cloudways_bashrc/main/.bash_aliases -O ~/.bash_aliases'
 
 # custom screen help
 if [ "x$TERM" == "xscreen" ];
