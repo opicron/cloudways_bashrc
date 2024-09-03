@@ -22,6 +22,9 @@ Retrieve new `.bash_aliases` from github
 ### `screenlist`
 Returns the current list of screens # and titles
 
+### `apm`
+Shortversion for `/usr/local/sbin/apm`
+
 # APM
 Server and application information:
 `/usr/local/sbin/apm`
