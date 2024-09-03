@@ -1,4 +1,4 @@
-# Syntactic sugar for ANSI escape sequences
+# Syntactic sugar for ANSI escape sequences 1
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red
 txtgrn='\[\e[0;32m\]' # Green
