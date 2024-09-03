@@ -93,6 +93,7 @@ function parse_git_branch {
 
 # auto reload .bash_aliases on change
 check_and_reload_bashrc () {
+  # if not set export
   if [[ -z "${BASHRC_MTIME}" ]]; then
     if ! [ -f $FILE ]; then
       touch ~/.bash_aliases
@@ -140,7 +141,8 @@ then
 
 else
   # help screen
-  screen_help
+  if [[ -z "${BASHRC_MTIME}" ]]; then
+    screen_help
 
   #replace screen with attach
   alias screen='screen -R'
