@@ -3,7 +3,7 @@ Useful prompt and functions to make live easier on Cloudways servers. Yes, I kno
 
 `PROMPT_COMMAND` is used to check the timestamp of `.bash_aliases` on each prompt reload. If its a new timestamp `.bashrc` is re-sourced. This will make sure all screen prompts and `.bash_aliases` are updated when required.
 
-Makes sure that `screen -R` is loaded in non-screen bash to avoid multiple sceeen sessions. Screen itself has enough windows available. Also, it makes sure that `exit` is remapped to `screen -D` to make sure the screen and all windows are not accidently closed when using the exit command. Use `\exit` to forcefully exit a screen window.
+Makes sure that `screen -R` is loaded in non-screen bash to avoid multiple sceeen sessions. Screen itself has enough windows available. Also, it makes sure that `exit` is remapped to `screen -d` to make sure the screen and all windows are not accidently closed when using the exit command. Use `\exit` to forcefully exit a screen window.
 
 ## Prompt
 - Screen # and title
