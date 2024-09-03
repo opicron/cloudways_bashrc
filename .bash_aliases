@@ -91,18 +91,28 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
 
-# load mtime at bash start-up
-export BASHRC_MTIME=$(date -r ~/.bash_aliases +%s)
-
-# auto reload .bash_aliases
-PROMPT_COMMAND="check_and_reload_bashrc"
 check_and_reload_bashrc () {
-  if [ "$(date -r ~/.bash_aliases +%s)" != $BASHRC_MTIME ]; then
-    export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
-    echo ".bash_aliases changed. re-sourcing.." >&2
-    . ~/.bashrc
+  if [ -f $FILE ]; then
+    if [ "$(date -r ~/.reload_bash +%s)" != $BASHRC_MTIME ]; then
+      export BASHRC_MTIME="$(date -r ~/.reload_bash +%s)"
+      # auto reload .bash_aliases
+      echo ".bash_aliases changed. re-sourcing.." >&2
+      . ~/.bashrc
+    fi
   fi
 }
+
+FILE=~/.reload_bash
+
+if [ -f $FILE ]; then
+  export BASHRC_MTIME=$(date -r ~/.reload_bash +%s)
+else
+  touch ~./reload_bash
+  export BASHRC_MTIME=$(date -r ~/.reload_bash +%s)
+fi
+
+# load mtime at bash start-up
+PROMPT_COMMAND="check_and_reload_bashrc"
 
 # aliases
 alias lt='ls --human-readable --size -1 -S --classify'
