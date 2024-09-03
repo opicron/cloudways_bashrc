@@ -93,7 +93,7 @@ function parse_git_branch {
 
 # listing
 alias lt='ls --human-readable --size -1 -S --classify'
-
+alias apm='/usr/local/sbin/apm'
 
 # custom screen help
 if [ "x$TERM" == "xscreen" ];
