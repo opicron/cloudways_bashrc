@@ -92,24 +92,25 @@ function parse_git_branch {
 }
 
 check_and_reload_bashrc () {
+  if [[ -z "${DEPLOY_ENV}" ]]; then
+    if ! [ -f $FILE ]; then
+      touch ~/.bash_aliases
+    fi
+    touch ~/.bash_aliases
+  fi
+
   if [ -f $FILE ]; then
-    if [ "$(date -r ~/.reload_bash +%s)" != $BASHRC_MTIME ]; then
-      export BASHRC_MTIME="$(date -r ~/.reload_bash +%s)"
+    if [ "$(date -r ~/.bash_aliases +%s)" != $BASHRC_MTIME ]; then
+      export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
       # auto reload .bash_aliases
       echo ".bash_aliases changed. re-sourcing.." >&2
       . ~/.bashrc
     fi
+  else
+    touch ~/.bash_aliases
+    export BASHRC_MTIME=$(date -r ~/.reload_bash +%s)
   fi
 }
-
-FILE=~/.reload_bash
-
-if [ -f $FILE ]; then
-  export BASHRC_MTIME=$(date -r ~/.reload_bash +%s)
-else
-  touch ~/.reload_bash
-  export BASHRC_MTIME=$(date -r ~/.reload_bash +%s)
-fi
 
 # load mtime at bash start-up
 PROMPT_COMMAND="check_and_reload_bashrc"
@@ -117,7 +118,7 @@ PROMPT_COMMAND="check_and_reload_bashrc"
 # aliases
 alias lt='ls --human-readable --size -1 -S --classify'
 alias apm='/usr/local/sbin/apm'
-alias getgitbash='wget --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/opicron/cloudways_bashrc/main/.bash_aliases -O ~/.bash_aliases.tmp && rm -f ~/.bash_aliases; mv ~/.bash_aliases.tmp ~/.bash_aliases && touch ~/.reload_bash'
+alias getgitbash='wget --no-check-certificate --no-cache https://raw.githubusercontent.com/opicron/cloudways_bashrc/main/.bash_aliases -O ~/.bash_aliases'
 
 # custom screen help
 if [ "x$TERM" == "xscreen" ];
