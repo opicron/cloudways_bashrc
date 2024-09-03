@@ -97,9 +97,7 @@ check_and_reload_bashrc () {
       touch ~/.bash_aliases
     fi
     export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
-  fi
-
-  if [ -f $FILE ]; then
+  else
     if [ "$(date -r ~/.bash_aliases +%s)" != $BASHRC_MTIME ]; then
       export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
       # auto reload .bash_aliases
