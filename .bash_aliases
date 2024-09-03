@@ -96,7 +96,7 @@ check_and_reload_bashrc () {
     if ! [ -f $FILE ]; then
       touch ~/.bash_aliases
     fi
-    touch ~/.bash_aliases
+    export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
   fi
 
   if [ -f $FILE ]; then
