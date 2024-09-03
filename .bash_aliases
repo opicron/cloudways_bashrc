@@ -143,6 +143,7 @@ else
   # help screen on first run
   if [[ -z "${BASHRC_MTIME}" ]]; then
     screen_help
+  fi
 
   #replace screen with attach
   alias screen='screen -R'
