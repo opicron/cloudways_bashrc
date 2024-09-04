@@ -120,7 +120,7 @@ https://api.github.com/repos/opicron/cloudways_bashrc/commits/main | grep \"date
 
       echo $(date -d $GITBASH_MTIME +%s)
     else
-      if [ "$(date +%s)" -gt $((FETCH_MTIME + 5)) ]; then
+      if [ "$(date +%s)" -gt $((FETCH_MTIME + 30)) ]; then
         echo retry
         #FETCH_MTIME=$(date +%s --date="+30 seconds")
         FETCH_MTIME=$(date +%s)
