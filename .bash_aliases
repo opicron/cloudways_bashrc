@@ -1,4 +1,3 @@
-#important
 export GITHUBTOKEN=%%TOKEN%%
 
 # Syntactic sugar for ANSI escape sequences
@@ -107,7 +106,7 @@ check_and_reload_bashrc () {
       export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
       echo ".bash_aliases changed. re-sourcing.." >&2
       echo "replacing %%TOKEN%% with GITHUBTOKEN first" >&2
-      sed -i 's/%%TOKEN%%/$GITHUBTOKEN/g' .bash_aliases
+      sed -i '1 s/%%TOKEN%%/$GITHUBTOKEN/g' .bash_aliases
       . ~/.bashrc
     fi
 
