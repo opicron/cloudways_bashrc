@@ -1,3 +1,4 @@
+#important
 export GITHUBTOKEN=%%TOKEN%%
 
 # Syntactic sugar for ANSI escape sequences
