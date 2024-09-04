@@ -121,7 +121,7 @@ https://api.github.com/repos/opicron/cloudways_bashrc/commits/main | grep \"date
       echo $(date -d $GITBASH_MTIME +%s)
     else
       if [ "$(date +%s)" -gt $((FETCH_MTIME + 30)) ]; then
-        echo retry
+        #echo retry
         #FETCH_MTIME=$(date +%s --date="+30 seconds")
         FETCH_MTIME=$(date +%s)
         GITBASH_MTIME=$(curl -s -L \
@@ -131,7 +131,7 @@ https://api.github.com/repos/opicron/cloudways_bashrc/commits/main | grep \"date
 https://api.github.com/repos/opicron/cloudways_bashrc/commits/main | grep \"date\" | head -n 1 | cut -d'"' -f4)
 
         if [ "$(date -d $GITBASH_MTIME +%s)" -gt ${BASHRC_MTIME} ]; then
-          echo 'github is more recent'
+          echo 'github .bash_aliases is more recent, call getgitbash to fetch'
         fi
       fi
     fi
