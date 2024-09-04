@@ -1,4 +1,4 @@
-EXPORT GITHUBTOKEN=%%TOKEN%%
+export GITHUBTOKEN=%%TOKEN%%
 
 # Syntactic sugar for ANSI escape sequences
 txtblk='\[\e[0;30m\]' # Black - Regular
