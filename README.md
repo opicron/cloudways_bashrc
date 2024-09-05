@@ -1,7 +1,7 @@
 # .bash_aliases
 Useful prompt and functions to make live easier on Cloudways servers. Yes, I know we shouldnt use `.bash_aliases` for all these additional functionality. However, `.bash_aliases` is included automatic by the default Clouways `.bashrc`. So we do not have to do any editing, just drop this file in your `~` home.
 
-`PROMPT_COMMAND` is used to check the timestamp of `.bash_aliases` on each prompt reload. If its a new timestamp `.bashrc` is re-sourced. This will make sure all screen prompts and `.bash_aliases` are updated when required.
+`PROMPT_COMMAND` is used to check the timestamp of `.bash_aliases` on each prompt reload. If its a new timestamp `.bashrc` is re-sourced. Additionally every 30 seconds it will check the github for a new version of `.bash_aliases`. The new version is not downloaded and sourced automatically. Use `getgitbash` to fetch and re-source new version.
 
 Makes sure that `screen -R` is loaded in non-screen bash to avoid multiple sceeen sessions. Screen itself has enough windows available. Also, it makes sure that `exit` is remapped to `screen -d` to make sure the screen and all windows are not accidently closed when using the exit command. Use `\exit` to forcefully exit a screen window.
 
