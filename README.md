@@ -3,7 +3,7 @@ Useful prompt and functions to make live easier on Cloudways servers. Yes, I kno
 
 `PROMPT_COMMAND` is used to check the timestamp of `.bash_aliases` on each prompt reload. If its a new timestamp `.bashrc` is re-sourced. 
 
-Additionally on a new session or screen the github commits are checked for a new version of `.bash_aliases`. The new version is not downloaded and sourced automatically, a notice is given. Use `getgitbash` to fetch and re-source new version.
+Additionally, if %%TOKEN%% is set: on a new session or screen the github commits are checked for a new version of `.bash_aliases`. The new version is not downloaded and sourced automatically, a notice is given. Use `getgitbash` to fetch and re-source new version.
 
 Makes sure that `screen -R` is loaded in non-screen bash to avoid multiple sceeen sessions. Screen itself has enough windows available. Also, it makes sure that `exit` is remapped to `screen -d` to make sure the screen and all windows are not accidently closed when using the exit command. Use `\exit` to forcefully exit a screen window.
 
