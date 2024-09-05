@@ -118,21 +118,8 @@ check_and_reload_bashrc () {
 -H "X-GitHub-Api-Version: 2022-11-28" \
 https://api.github.com/repos/opicron/cloudways_bashrc/commits/main | grep \"date\" | head -n 1 | cut -d'"' -f4)
 
-      echo $(date -d $GITBASH_MTIME +%s)
-    else
-      if [ "$(date +%s)" -gt $((FETCH_MTIME + 30)) ]; then
-        #echo retry
-        #FETCH_MTIME=$(date +%s --date="+30 seconds")
-        FETCH_MTIME=$(date +%s)
-        GITBASH_MTIME=$(curl -s -L \
--H "Accept: application/vnd.github+json" \
--H "Authorization: Bearer ${GITHUBTOKEN}" \
--H "X-GitHub-Api-Version: 2022-11-28" \
-https://api.github.com/repos/opicron/cloudways_bashrc/commits/main | grep \"date\" | head -n 1 | cut -d'"' -f4)
-
-        if [ "$(date -d $GITBASH_MTIME +%s)" -gt ${BASHRC_MTIME} ]; then
-          echo 'github .bash_aliases is more recent, call getgitbash to fetch'
-        fi
+      if [ "$(date -d $GITBASH_MTIME +%s)" -gt ${BASHRC_MTIME} ]; then
+        echo 'github .bash_aliases is more recent, call getgitbash to fetch'
       fi
     fi
   fi
