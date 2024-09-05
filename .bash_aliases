@@ -109,18 +109,17 @@ check_and_reload_bashrc () {
       export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
       . ~/.bashrc
     fi
-
-    if [[ -z "${GITBASH_MTIME}" ]]; then
-      FETCH_MTIME=$(date +%s)
-      GITBASH_MTIME=$(curl -s -L \
+  fi
+  if [[ -z "${GITBASH_MTIME}" ]]; then
+    FETCH_MTIME=$(date +%s)
+    GITBASH_MTIME=$(curl -s -L \
 -H "Accept: application/vnd.github+json" \
 -H "Authorization: Bearer ${GITHUBTOKEN}" \
 -H "X-GitHub-Api-Version: 2022-11-28" \
 https://api.github.com/repos/opicron/cloudways_bashrc/commits/main | grep \"date\" | head -n 1 | cut -d'"' -f4)
 
-      if [ "$(date -d $GITBASH_MTIME +%s)" -gt ${BASHRC_MTIME} ]; then
-        echo 'github .bash_aliases is more recent, call getgitbash to fetch'
-      fi
+    if [ "$(date -d $GITBASH_MTIME +%s)" -gt ${BASHRC_MTIME} ]; then
+      echo 'github .bash_aliases is more recent, call getgitbash to fetch'
     fi
   fi
 }
