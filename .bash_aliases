@@ -49,6 +49,7 @@ Hotkeys: \n\
 \tctrl-a + | \t\t Split vertical\n\
 \tctrl-a + S \t\t Split horizontal\n\
 \tctrl-a + tab \t\t Make other tab active\n\
+\tctrl-a + esc \t\t Enable scroll\n\
 
 \\\exit to close screen command (add slash to avoid alias)\n\
 \n"
