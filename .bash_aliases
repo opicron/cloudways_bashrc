@@ -106,7 +106,7 @@ check_and_reload_bashrc () {
     if [ "$(date -r ~/.bash_aliases +%s)" -gt $((BASHRC_MTIME)) ]; then
       echo ".bash_aliases changed. re-sourcing.." >&2
       echo "replacing %%TOKEN%% with GITHUBTOKEN first" >&2
-      sed -i "1 s/%%TOKEN%%/${GITHUBTOKEN}/g" .bash_aliases
+      sed -i "1 s/%%TOKEN%%/${GITHUBTOKEN}/g" ~/.bash_aliases
       export BASHRC_MTIME="$(date -r ~/.bash_aliases +%s)"
       . ~/.bashrc
     fi
