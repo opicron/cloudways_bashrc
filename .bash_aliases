@@ -163,5 +163,5 @@ else
   fi
 
   #replace screen with attach
-  alias screen='screen -R'
+  alias screen='screen -xR'
 fi
