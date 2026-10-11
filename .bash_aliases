@@ -204,6 +204,7 @@ github_token_notice_once() {
   fi
 }
 
+alias sclaude='sudo env "HOME=$HOME" claude'
 alias github-token-status='github_token_status'
 alias github-token='githubtoken'
 alias set-github-token='githubtoken'
